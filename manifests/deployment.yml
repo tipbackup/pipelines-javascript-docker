@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tipbackuppipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tipbackuppipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: tipbackuppipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: tipbackuppipelinesjavascriptdocker 
+          image: liaocontainerregistry.azurecr.io/tipbackuppipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
